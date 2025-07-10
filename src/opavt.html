@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!--<link rel="stylesheet" href="../leaflet/leaflet.css">
+<script src="../leaflet/leaflet.js"></script>-->
+
+
+  <!--    CDN for chart.js-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!--    Leaflet CSS-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+<!--    CDN for Leaflet-->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<!--cdn for clusters -->
+<script src ="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" rel="stylesheet" />
+
+
+
+<!--    CDN for Bootstrap-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+<!--    CSS for Bootstrap-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+<!--    CDN for jquery-->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<!--    CDN for AJAX-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<link rel="stylesheet" href="opavt.css">
+
+<html lang="en">
+<head>
+    <script src="../chart.umd.min.js"></script>
+    <script src="../turf.min.js"></script>
+    <script src="../FileSaver.js"></script>
+    <!-- Search -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet-geosearch@3.3.2/dist/geosearch.css"
+    />
+    <!-- Make sure you put this AFtER leaflet.js, when using with leaflet -->
+    <script src="https://unpkg.com/leaflet-geosearch@3.3.2/dist/geosearch.umd.js"></script>
+
+</head>
+<body>
+
+
+<div id="map">
+</div>
+<div id ="input-panel-icons" >
+    <div class="supply-toolbar" id="icons">
+        <label>
+            <input type="radio" name="supply" value="carehomes" id="carehome_button" >
+            <img src="img/nursing-home.png">
+            <div>Care Homes</div>
+        </label>
+        <label>
+            <input type="radio" name="supply" value="gpsurgeries" id="gp_surgeries">
+            <img src="img/doctor.png">
+            <div>Doctors</div>
+        </label>
+        <label>
+            <input type="radio" name="supply" value="pharmacies" id="pharmacy">
+            <img src="img/pharmacy.png">
+            <div>Pharmacies</div>
+        </label>
+        </div>
+
+        <div class="supply-toolbar">
+        <label>
+            <input type="radio" name="supply" value="schools" id="schools">
+            <img src="img/education.png">
+            <div>Schools</div>
+        </label>
+        <label>
+            <input type="radio" name="supply" value="banks" id="banks">
+            <img src="img/bank.png">
+            <div>Banks</div>
+        </label>
+        <label>
+            <input type="radio" name="supply" value="shops" id="super_markets" >
+            <img src="img/store.png">
+            <div>Super markets</div>
+        </label>
+    </div>
+    <label class="container">POI search
+        <input type="checkbox" id="poicheck">
+        <span class="checkmark"></span>
+      </label>
+
+
+      <div class="info">
+        <i class="icon-info-sign"></i>
+        <span class="extra-info" id="span-poi">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        </span>
+      </div>
+    </div>
+
+<!--    sliders under icon row-->
+
+    
+</div>
+<div id="input-panel-dropdown">
+    <div class ="row" id="sliderow">
+        <div class="slider-container"  id="slidecontainer-maxwalk">
+            <input type="range" min="100" max="800" value="400"  step="25" class="slider" id="maxwalk_value" >
+            <p>Max Walk distance:  <span id="max_walk"></span></p>
+        </div>
+        <div class="slider-container"  id="slidecontainer-catchsize">
+            <input type="range" min="5" max="60" value="30"  step="5" class="slider" id="slider_value">
+            <p>Catchment distance: <span id="catchmenttime"></span></p>
+        </div>
+    <div class ="row" id="vss">
+    <div id ="Variable-value-select">
+        <p>Time of the day</p>
+        <select  class ="select2"id = "vss-select" multiple ="multiple">
+            <option value="07:00am">7am</option>
+            <option value="08:00am">8am</option>
+            <option value="09:00am">9am</option>
+            <option value="10:00am">10am</option>
+            <option value="11:00am">11am</option>
+            <option value="12:00pm">12pm</option>
+            <option value="01:00pm">1pm</option>
+            <option value="02:00pm">2pm</option>
+            <option value="03:00pm">3pm</option>
+            <option value="04:00pm">4pm</option>
+            <option value="05:00pm">5pm</option>
+            <option value="06:00pm">6pm</option>
+            <option value="07:00pm">7pm</option>
+            <option value="08:00pm">8pm</option>
+            <option value="09:00pm">9pm</option>
+            <option value="10:00pm">10pm</option>
+        </select>
+    </div>
+
+<!--
+        reason for not allowing data change is that it will mess with the current day choosing system as well as bricking system if they choose a data that is outside of calender
+-->
+        <div id ="Variable-number-select">
+        <p>Day of the week </p>
+        <select class ="select2" id = "vns-select" multiple ="multiple">
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+        </select>
+    </div>
+
+    </div>
+
+
+        <div class ="row" id="trs">
+            <div id ="exclude-pub-transport">
+                <fourm id="agencyfourm">
+                    <p>Exclude a agency </p>
+                <select class ="select2" id = "eptc-select" multiple ="multiple">
+                    <option>
+                    </option>
+                    <option>
+                    </option>
+                </select>
+                </fourm>
+            </div>
+            <div id ="Variable-route-select">
+                <fourm id="routefourm">
+                <p>Exclude a route </p>
+                <select class ="select2" id = "vrs-select" multiple ="multiple" >
+                    <option>
+                    </option>
+                </select>
+                </fourm>
+            </div>
+            </div>
+
+
+
+            <div id="triprow">
+            <div id ="Variable-trip-select">
+                <fourm id="tripfourm">
+                    <p>Exclude a trip</p>
+                    <select class ="select2" id = "trip-select" multiple ="multiple" >
+                        <option>
+                        </option>
+                    </select>
+                </fourm>
+            </div>
+            <div id ="variable-year-select">
+                <p>Select timetable year</p>
+                <select  class ="select2"id = "year-select"  multiple ="multiple">
+                    <option value="2022" selected>2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2023">2023</option>
+                    <option value="2019">2019</option>
+                </select>
+            </div>
+            </div>
+
+  <!-- <div id ="trip_select">
+        <fourm id="tripfourm">
+            <p>Select a route to exclude from calculation </p>
+            <select class ="select2" id = "trip-select" multiple ="multiple" >
+                <option>
+                </option>
+            </select>
+        </fourm>
+    </div>-->
+
+
+<div class = "row" id ="button-row">
+    <button class="button" id="recalculate">Re-calculate</button>
+    <button class="button" id="clear-layers">clear layers </button>
+    <button class="button" id="Save">Save Polygon</button>
+</div>
+</div>
+
+<!-- <div class = "row" id = " toggle-row ">
+
+    <form>
+        <label>
+            <input type="checkbox" name="" id="toggle-supply-coords"
+                   class=" text-center "/>
+            <img src="img/bus.png">
+        </label>
+
+        <label>
+            <input type="checkbox" name="" id="toggle-map-coords"
+                   class=" text-center "/>
+            <img src="img/bike.png">
+        </label>
+    </form>
+</div> -->
+<div class="info">
+    <i class="icon-info-sign"></i>
+    <span class="extra-info" id ="span-buttons">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+    </span>
+  </div>
+</div>
+
+<div id ="input-panel-travel">
+
+    <div class="row" id="transportrow">
+        <form>
+            <label>
+                <input type="checkbox" name="transport2" id="Transportbus"
+                       class=" text-center "/>
+                <img src="img/bus.png">
+            </label>
+
+            <label>
+                <input type="checkbox" name="transport2" id="Transportbike2019"
+                       class=" text-center "/>
+                <img src="img/bike.png">
+            </label>
+
+            <label>
+                <input type="checkbox" name="transport2" id="Transportwalk2019"
+                       class=" text-left"/>
+                <img src="img/walk.png">
+            </label>
+
+            <label>
+                <input type="checkbox" name="transport2" id="Transportcar2019"
+                       class=" text-right  "/>
+                <img src="img/car.png">
+            </label>
+        </form>
+    </div>
+</div>
+
+
+
+<div id="output-panel-chart">
+    <div class="info">
+        <i class="icon-info-sign"></i>
+        <span class="extra-info" id="chart-span">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        </span>
+      </div>
+    <div id="Temporal-chart" class="chart-box">
+        <canvas id="chartCanvas"></canvas>
+    </div>
+    
+</div>
+
+
+
+
+
+<script src="main.js"></script>
+<script src = "Chrt.js"></script>
+
+
+
+
+
+</body>
+</html>

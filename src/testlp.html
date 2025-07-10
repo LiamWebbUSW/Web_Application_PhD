@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<!--<link rel="stylesheet" href="../leaflet/leaflet.css">
+<script src="../leaflet/leaflet.js"></script>-->
+
+  <!--    CDN for chart.js-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!--    Leaflet CSS-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+<!--    CDN for Leaflet-->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<!--cdn for clusters -->
+<script src ="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" rel="stylesheet" />
+
+<!--    CDN for Bootstrap-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+<!--    CSS for Bootstrap-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+<!--    CDN for jquery-->
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<!--    CDN for AJAX-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+
+<link rel="stylesheet" href="testlp.css">
+
+<html lang="en">
+<head>
+    <script src="../chart.umd.min.js"></script>
+   <script src="../FileSaver.js"></script>
+    <script src="../turf.min.js"></script>
+    <!-- Search -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet-geosearch@3.3.2/dist/geosearch.css"
+    />
+    <!-- Make sure you put this AFtER leaflet.js, when using with leaflet -->
+    <script src="https://unpkg.com/leaflet-geosearch@3.3.2/dist/geosearch.umd.js"></script>
+
+</head>
+<body>
+
+<div id="map">
+    
+</div>
+<div class="slider-container"  id="slidecontainer-catchsize">
+    <input type="range" min="5" max="60" value="30"  step="5" class="slider" id="slider_value">
+    <p>Catchment distance: <span id="catchmenttime"></span></p>
+</div>
+
+<div class="form-popup" id="agency-form">
+    <H2>Bus agency info </H2><form class="form-container" id="aform">
+
+    <div class="form-group2">
+    <label class="control-label col-10"><strong>Agency ID</strong></label>
+    <input type="text" placeholder="Insert the Agency id" id="agency_id" name="agency_id" class="form-control"/>
+    </div>
+
+    <div class="form-group2">
+        <label class="control-label col-10"><strong>Agency Name</strong></label>
+        <input type="text" placeholder="Insert the Agency name" id="agency_name" name="agency_name" class="form-control"/>
+        </div>
+
+        <div class="form-group2">
+            <label class="control-label col-10"><strong>Agency URL</strong></label>
+            <input type="text" placeholder="Insert the Agency URL" id="agency_url" name="agency_url" class="form-control"/>
+            </div>
+
+            <div class="form-group2">
+                <label class="control-label col-10"><strong>Agency timezone</strong></label>
+                <input type="text" placeholder="Insert the Agency timezone" id="agency_time" name="agency_time" class="form-control"/>
+                </div>
+
+                <div class="form-group2">
+                    <label class="control-label col-10"><strong>Agency language</strong></label>
+                    <input type="text" placeholder="Insert the Agency language" id="agency_lang" name="agency_lang" class="form-control"/>
+                    </div>
+
+    <button type="submit" class="btn">submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+</form>
+</div>
+
+<div class="form-popup" id="stop-form">
+    <H2>Bus stop info </H2><form class="form-container" id="sform">
+
+    <div class="form-group2">
+    <label class="control-label col-10"><strong>Stop ID</strong></label>
+    <input type="text" placeholder="Insert the Stop id" id="stop_id" name="stop_id" class="form-control"/>
+    </div>
+
+    <div class="form-group2">
+        <label class="control-label col-10"><strong>Stop Code</strong></label>
+        <input type="text" placeholder="Insert the Stop Code" id="stop_code" name="stop_code" class="form-control"/>
+        </div>
+
+        <div class="form-group2">
+            <label class="control-label col-10"><strong>Stop Name</strong></label>
+            <input type="text" placeholder="Insert the Stop Name" id="stop_name" name="stop_name" class="form-control"/>
+            </div>
+
+            <div class="form-group2">
+                <label class="control-label col-10"><strong>Stop Lon</strong></label>
+                <input type="text" placeholder="Insert the Stop Lon" id="stop_lon" name="stop_lon" class="form-control"/>
+                </div>
+
+                <div class="form-group2">
+                    <label class="control-label col-10"><strong>Stop Lat</strong></label>
+                    <input type="text" placeholder="Insert the Stop Lat" id="stop_lat" name="stop_lat" class="form-control"/>
+                    </div>
+
+    <button type="submit" class="btn">submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+</form>
+</div>
+
+<div class="form-popup" id="trip-form">
+    <H2>Trip info </H2><form class="form-container" id="lform">
+
+    <div class="form-group2">
+    <label class="control-label col-10"><strong>Route ID</strong></label>
+    <input type="text" placeholder="Insert the route id" id="trip_route_id" name="route_id" class="form-control"/>
+    </div>
+
+    <div class="form-group2">
+        <label class="control-label col-10"><strong>Service ID</strong></label>
+        <input type="text" placeholder="Insert the service id" id="service_id" name="service_id" class="form-control"/>
+        </div>
+
+        <div class="form-group2">
+            <label class="control-label col-10"><strong>Trip ID</strong></label>
+            <input type="text" placeholder="Insert the trip id" id="trip_id" name="trip_id" class="form-control"/>
+            </div>
+
+
+    <button type="submit" class="btn">submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+</form>
+</div>
+
+
+<div class="form-popup" id="route-form">
+<H2>Route info </H2><form class="form-container" id="routeform">
+
+<div class="form-group2">
+<label class="control-label col-10"><strong>Route ID</strong></label>
+<input type="text" placeholder="Insert the route id" id="route_id" name="route_id" class="form-control"/>
+</div>
+
+<div class="form-group2">
+    <label class="control-label col-10"><strong>agency ID</strong></label>
+    <input type="text" placeholder="Insert the agency id" id="agency_id" name="agency_id" class="form-control"/>
+    </div>
+
+    <div class="form-group2">
+        <label class="control-label col-10"><strong>Route Short Name</strong></label>
+        <input type="text" placeholder="insert route short name" id="route_short_name" name="route_short_name" class="form-control"/>
+        </div>
+
+        <div class="form-group2">
+            <label class="control-label col-10"><strong>Route Long Name</strong></label>
+            <input type="text" placeholder="insert route long name" id="route_long_name" name="route_long_name" class="form-control"/>
+            </div>
+
+        <div class="form-group2">
+            <label class="control-label col-10"><strong>Route Desc</strong></label>
+            <input type="text" placeholder="insert description of the route" id="route_desc" name="route_desc" class="form-control"/>
+            </div>
+
+            <div class="form-group2">
+                <label class="control-label col-10"><strong>Route Type</strong></label>
+                <input type="text" placeholder="Route type" id="route_type" name="route_type" class="form-control"/>
+                </div>
+        
+<button type="submit" class="btn">submit</button>
+<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+</form>
+</div>
+
+<div class="form-popup" id="calender-form">
+<H2>Route info </H2><form class="form-container" id="calenderform">
+
+    <div class="form-group2">
+        <label class="control-label col-10"><strong>Service ID</strong></label>
+        <input type="text" placeholder="Insert the service id" id="service_id" name="service_id" class="form-control"/>
+        </div>
+
+<div class="form-group2">
+    <label class="control-label col-10"><strong>Monday</strong></label>
+    <input type="text" placeholder="Insert a 1 if the route runs on this day or 0 if not" id="monday" name="monday" class="form-control"/>
+    </div>
+
+    <div class="form-group2">
+        <label class="control-label col-10"><strong>Tuesday</strong></label>
+        <input type="text" placeholder="Insert a 1 if the route runs on this day or 0 if not" id="tuesday" name="tuesday" class="form-control"/>
+        </div>
+
+        <div class="form-group2">
+            <label class="control-label col-10"><strong>Wednesday</strong></label>
+            <input type="text" placeholder="Insert a 1 if the route runs on this day or 0 if not" id="wednesday" name="wednesday" class="form-control"/>
+            </div>
+
+            <div class="form-group2">
+                <label class="control-label col-10"><strong>Thursday</strong></label>
+                <input type="text" placeholder="Insert a 1 if the route runs on this day or 0 if not" id="thursday" name="thursday" class="form-control"/>
+                </div>
+
+                <div class="form-group2">
+                    <label class="control-label col-10"><strong>Friday</strong></label>
+                    <input type="text" placeholder="1 for yes 0 for no" id="friday" name="friday" class="form-control"/>
+                    </div>
+                    <div class="form-group2">
+                        <label class="control-label col-10"><strong>Saturday</strong></label>
+                        <input type="text" placeholder="1 for yes 0 for no" id="saturday" name="saturday" class="form-control"/>
+                        </div>
+
+                        <div class="form-group2">
+                            <label class="control-label col-10"><strong>Sunday</strong></label>
+                            <input type="text" placeholder="1 for yes 0 for no" id="sunday" name="sunday" class="form-control"/>
+                            </div>
+                    <div class="form-group2">
+                        <label class="control-label col-10"><strong>start-date</strong></label>
+                        <input type="text" placeholder="format 20210719" id="start-date" name="start-date" class="form-control"/>
+                        </div>
+
+                        <div class="form-group2">
+                            <label class="control-label col-10"><strong>end-date</strong></label>
+                            <input type="text" placeholder="format 20210719" id="end-date" name="end-date" class="form-control"/>
+                            </div>
+    
+<button type="submit" class="btn">submit</button>
+<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+</form>
+</div>
+
+<!--    sliders under icon row-->
+
+</div>
+<div id="input-panel-dropdown">
+    
+    <div class="one"><h1>Bus Route Inputs</h1></div>
+    
+    <table cellpadding="2" cellspacing="2" border="0" bgcolor="#dfdfdf" width="40%" align="center">
+        <thead>
+            <tr>
+                <th>trip_id</th>
+                <th width="20%">Arr_time</th>
+                <th width="12%">dep_time</th>
+                <th width="12%">stop_id</th>
+                <th width="12%">stop_seq</th>
+                
+            </tr>
+        </thead>
+            <tbody id="tableData"></tbody>
+        </table>
+
+        <div class ="row" id="trs">
+            <div id ="exclude-pub-transport">
+            
+     
+
+            <div class="two"><h2>Create GTFS files</h2></div>
+
+
+            <button class="button" id="route">Create Route</button>
+
+            <button class="button" id="trip" disabled="true">Create Trip</button>
+
+            <button class="button" id="calender" disabled="true">Create Calender</button>
+            </div>
+            </div>
+
+    <button class="button" id="Save">Save Polygon</button>
+    <button class="button" id="click">Create GTFS</button>
+    <button class="button" id="genr5">R5 calculation</button>
+    <button class="button" id="agency">Create agency</button>   
+            
+    <button class="button" id="stop">Create stop</button> 
+
+</div>
+
+<div id="output-panel-chart">
+    <div class="info">
+        <i class="icon-info-sign"></i>
+        <span class="extra-info" id="chart-span">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        </span>
+      </div>
+    <div id="Temporal-chart" class="chart-box">
+        <canvas id="chartCanvas"></canvas>
+    </div>
+    
+</div>
+
+<script src="test.js"></script>
+<script src = "Chrt.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+/*map space for leaflet maps*/
+
+body #mapspce{
+	height: 500px;
+	background-color:#444444;
+	border: 4px solid black;
+	padding: 10px;
+	text-align: center;
+	z-index:1;	
+}
+
+/*Generic body inc colour and fonts*/
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:15px;
+	line-height:1.5;
+	padding:0;
+	margin:0;
+	background-color: #f4f4f4;
+}
+#abpage{
+	float:left;
+}
+
+#map_space{
+	float: right;
+	height: 700px;
+	width: 40rem;
+}
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:15px;
+	line-height:1.5;
+	padding:0;
+	margin:0;
+	background-color: #f4f4f4;
+}
+/*global container to organise boxes*/
+.container{
+	width:90%;
+	margin: auto;
+	overflow:hidden;
+}
+/*Ensures all unordered lists are have no margine or padding beweetn them allowing them to be close wwithin the nav bar*/
+ul{
+	margin:0;
+	padding:0;
+}
+
+/*Creates a darker background that allows for the side bar to stand out*/
+.darker{
+	margin-top:10px;
+	padding:20px;
+	background:#065c00;
+	color:#ffffff;
+	margin-bottom:10px
+}
+
+/*Header and navbar*/
+header{
+background:#444444;
+color:#ffffff;
+padding-top:20px;
+min-height:50px;
+border-bottom:#000 3px solid;
+}
+/*Header links*/
+header a{
+	color:#ffffff;
+	text-decoration:none;
+	text-transform: uppercase;
+	font:18px;
+}
+/*Changes size of header title*/
+header #title h1{
+	font-size:40px;
+	margin:0;
+}
+/*Allows for the list of links to be moved making the nav bar neater*/
+header li{
+	float:left;
+	display:inline;
+	padding: 0 20px 0 20px;
+}
+/*Moves the page title to the left*/
+header #title{
+	float:left;
+}
+/*Floats the entire nav bar to the right seperating it from the title*/
+header nav{
+	float:right;
+	margin-top:10px;
+}
+/*Highlights and embolds the the current link */
+header .highlightlink, header .currentlink a {
+	color:#0000D7;
+	font-weight:bold;
+}
+/*Embolds the navigation links as you hover over them*/
+header a:hover{
+	color:#0080ff;
+	font-weight:bold;
+}
+
+/*Main Image*/
+#mainimage{
+	height:auto;
+	width:100%;
+	background:url('../Coursework/Images/Farm.png') no-repeat 0 ;
+	text-align:center;
+	color:#000;
+}
+/*title Text within the main image*/
+#mainimage h2, #visit h2{
+	margin-top:10px;
+	font-size:30px;
+	margin-bottom:10px;
+}
+/*Changes the font of the small text within the main image*/
+#mainimage p{
+	font-size:20px;
+}
+/*Latest news area*/
+#LatestNews{
+	text-align:center;
+	color:#000;
+	background:#ffffff;
+}
+/*Latests new title data*/
+#LatestNews h2{
+	font-size:30px;
+}
+
+/*Visit boxes*/
+#visit{
+	text-align:center;
+	margin-top:20px;
+	
+}
+/*Data within the visit us section*/
+#visit .box{
+	float:left;
+	margin-left:30%;
+	width:40%;
+	padding:10px;
+}
+/*Tables within the website both php and not*/
+table {
+	margin-left:auto;
+	margin-right:auto;
+	color:#000;
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 400px;
+}
+/*information about individual sections of the table*/
+td,th{
+	border: 1px solid #000;
+	height: 20px;
+	text-align:center;
+}
+th{
+	background:#f4f4f4;
+	font-weight: bold;
+}
+td{
+	background:#fafafa;
+}
+
+/*Sidebars*/
+aside#sidebar{
+	float:right;
+	width:30%;
+	margin-top:10px;
+}
+/*about main*/
+article#maincol{
+	float:left;
+	width:60%;
+}
+
+/*dropdown menu*/
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+	z-index:999;
+}
+
+.dropdown .but {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown .but:hover{
+	color:#0080ff;
+	font-weight:bold;
+	background-color:#737373;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 20;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.titlelink a {
+	color:#0080ff;
+	text-decoration:none;
+	text-transform: uppercase;
+	font:18px;
+}
+
+.btmtxtsect{
+	text-align: center;
+	/*border: 3px solid green;*/
+}
+
+/*columns and rows for GIS explinations*/
+
+.column {
+	list-style-position:inside;
+	float: left;
+	width: 50%;
+	height: 350px;
+}
+.row:after {
+	content:"";
+	display: table;
+	clear:both;
+}
+
+_div.innerHTML {
+	background-color:#444444;
+	width:30px;
+	height:20px;
+}
+
+/*pop up css*/
+.ol-popup {
+    position: absolute;
+    min-width: 180px;
+    background-color: white;
+    -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    bottom: 12px;
+    left: -50px;
+}
+.ol-popup:after, .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+}
+.ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+}
+.ol-popup-closer {
+    text-decoration: none;
+    position: absolute;
+    top: 2px;
+    right: 8px;
+}
+.ol-popup-closer:after {
+    content: "X";
+}
+
+/*Button for finginf locations*/
+button.loc {
+    position: absolute;
+    top: 15px;
+    left: 50px;
+    padding: .5em 1em;
+    background-color: #fff;
+    font-size: 1.2em;
+    border:0;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    border-radius: 4px;
+    color: black;
+    z-index: 999;
+}
+button.loc:hover {
+    cursor: pointer;
+}
+#locate {
+    display: none;
+}
+#find-nearest {
+	display: none;
+	text-align: center;
+}
+
+*/div.user_Input_form{
+	align-items: center;
+	flex-direction: row;
+
+}*/
+
+.modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  z-index: 1000;
+  width: 80%;
+}
+.button1{
+
+    z-index: 1000;
+    position: relative;
+}
+
+#add_button{
+
+    z-index: 1000;
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #E8E8E8;
+  color: black;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #E8E8E8;
+  color: white;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/*Footer*/
+footer{
+	color:#ffffff;
+	padding:20px;
+	background-color:#119108;
+	border-top:#000 3px solid;
+	text-align:center;
+}
+
+footer.gis{
+	background-color:#444444;
+}
