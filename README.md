@@ -40,6 +40,10 @@ Web_Application_PhD/
 
 ## 🚀 How to Run
 
+**Note**
+This version of the application does not include and of the external JS files from plugins that were utlised 
+
+
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/LiamWebbUSW/Web_Application_PhD.git
@@ -50,14 +54,11 @@ Web_Application_PhD/
    - Set up [OpenTripPlanner](https://docs.opentripplanner.org/en/latest/) and/or [R5](https://docs.conveyal.com/)
    - Install and configure [Geoserver](http://geoserver.org/)
 
-3. **Import the Database**
-   - Load SQL schemas (see `src/config/` or `README` notes in relevant folders)
-
-4. **Launch a Local Server**
+3. **Launch a Local Server**
    - Run a PHP server or deploy using Apache/Nginx
    - Ensure Java-based services (OTP, R5) are running
 
-5. **Open in Browser**
+4. **Open in Browser**
    - Navigate to `localhost/src/HTML/otp.html` or `r5.html` to start exploring
 
 ## 📘 Thesis Reference
