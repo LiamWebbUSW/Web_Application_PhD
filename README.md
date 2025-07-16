@@ -45,7 +45,7 @@ This version of the application does not include and of the external JS files fr
    - Chart.JS
    - FileSaver
    - Turf
-External plugins
+**External plugins**
    - Leaflet
    - BootStrap
    - jquery
