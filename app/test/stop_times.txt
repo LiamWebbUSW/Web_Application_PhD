@@ -1,0 +1,3 @@
+trip_id,arrival_time,departure_time,stop_id,stop_sequence,timepoint9,07:00:00,07:00:00,5520AWA12468,1,1
+9,07:00:00,07:00:00,5520AWA12468,1,1
+9,07:10:00,07:10:00,5520AWA12466,2,1
