@@ -42,6 +42,16 @@ Web_Application_PhD/
 
 **Note**
 This version of the application does not include and of the external JS files from plugins that were utlised 
+   - Chart.JS
+   - FileSaver
+   - Turf
+External plugins
+   - Leaflet
+   - BootStrap
+   - jquery
+   - AJAX
+   - leaflet-geosearch
+   - leaflet markercluster
 
 
 1. **Clone the Repository**
