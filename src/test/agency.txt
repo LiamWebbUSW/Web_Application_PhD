@@ -1,0 +1,99 @@
+agency_id,agency_name,agency_url,agency_timezone,agency_lang
+RicsBros,Richards Bros,http://www.URL-IS-MISSING.com,Europe/London,en
+LlosCoas,Lloyds Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+LlewJonsCoas,Llew Jones Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+StahSouhWals,Stagecoach South Wales,http://www.URL-IS-MISSING.com,Europe/London,en
+NADT,New Adventure Travel,http://www.URL-IS-MISSING.com,Europe/London,en
+NewAdveTral,New Adventure Travel,http://www.URL-IS-MISSING.com,Europe/London,en
+CarfBus,Cardiff Bus,http://www.URL-IS-MISSING.com,Europe/London,en
+TANV,Tanat Valley Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+FirtCymu,First Cymru,http://www.URL-IS-MISSING.com,Europe/London,en
+ArraCymu,Arriva Cymru,http://www.URL-IS-MISSING.com,Europe/London,en
+FCYM,First Cymru,http://www.URL-IS-MISSING.com,Europe/London,en
+CelcTral,Celtic Travel,http://www.URL-IS-MISSING.com,Europe/London,en
+ArraMids,Arriva Midlands,http://www.URL-IS-MISSING.com,Europe/London,en
+P&OLlod,P & O Lloyd,http://www.URL-IS-MISSING.com,Europe/London,en
+OJNS,O R Jones & Sons Ltd,http://www.URL-IS-MISSING.com,Europe/London,en
+SSWL,Stagecoach South Wales,http://www.URL-IS-MISSING.com,Europe/London,en
+BernCoas,Berwyn Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+GwyrCoas,Gwynfor Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+StahWye&Dean,Stagecoach Wye & Dean,http://www.URL-IS-MISSING.com,Europe/London,en
+StahinCher,Stagecoach in Chester,http://www.URL-IS-MISSING.com,Europe/London,en
+NewtBus,Newport Bus,http://www.URL-IS-MISSING.com,Europe/London,en
+NefnCoas,Nefyn Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+CBUS,Cardiff Bus,http://www.URL-IS-MISSING.com,Europe/London,en
+SouhWalsTrat,South Wales Transport,http://www.URL-IS-MISSING.com,Europe/London,en
+SarsBrosCoae,Sargents Brothers Coache,http://www.URL-IS-MISSING.com,Europe/London,en
+Caei,Caelloi,http://www.URL-IS-MISSING.com,Europe/London,en
+Firtcymu,First cymru,http://www.URL-IS-MISSING.com,Europe/London,en
+LewsYLlan,Lewis Y Llan,http://www.URL-IS-MISSING.com,Europe/London,en
+SWTR,South Wales Transport,http://www.URL-IS-MISSING.com,Europe/London,en
+MoneCouyCou,Monmouthshire County Cou,http://www.URL-IS-MISSING.com,Europe/London,en
+RBRO,Richards Bros,http://www.URL-IS-MISSING.com,Europe/London,en
+LLCO,Lloyds Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+MHCO,M & H Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+GWCO,Gwynfor Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+TafValyCoas,Taf Valley Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+MorsTral,Morris Travel,http://www.URL-IS-MISSING.com,Europe/London,en
+PAOL,P & O Lloyd,http://www.URL-IS-MISSING.com,Europe/London,en
+EdwsCoas,Edwards Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+PhilAnsw,Phil Anslow,http://www.URL-IS-MISSING.com,Europe/London,en
+MidWalsMots,Mid Wales Motorways,http://www.URL-IS-MISSING.com,Europe/London,en
+Clyg&Tren,Clynnog & Trefor/Berwyn ,http://www.URL-IS-MISSING.com,Europe/London,en
+Dana,Dansa,http://www.URL-IS-MISSING.com,Europe/London,en
+TantValyCoas,Tanat Valley Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+M&HCoas,M & H Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+LJCO,Llew Jones Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+K&PCoas,K & P Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+JAEvas,J A Evans,http://www.URL-IS-MISSING.com,Europe/London,en
+EifsCoas,Eifion's Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+JOHN,John's Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+Rids,Ridgways,http://www.URL-IS-MISSING.com,Europe/London,en
+HarsCoas,Harris Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+EasyofPend,Easyway of Pencoed,http://www.URL-IS-MISSING.com,Europe/London,en
+MISSINGAGENCY,MISSINGAGENCY,http://www.URL-IS-MISSING.com,Europe/London,en
+Hens,Henleys,http://www.URL-IS-MISSING.com,Europe/London,en
+RWils,R Williams,http://www.URL-IS-MISSING.com,Europe/London,en
+PRTH,Thomas of Rhondda,http://www.URL-IS-MISSING.com,Europe/London,en
+Con2,Connect2,http://www.URL-IS-MISSING.com,Europe/London,en
+ORJons&SonsLtd,O R Jones & Sons Ltd,http://www.URL-IS-MISSING.com,Europe/London,en
+PatsCoas,Pat's Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+OWNC,Owens of Oswestry,http://www.URL-IS-MISSING.com,Europe/London,en
+OwesofOswy,Owens of Oswestry,http://www.URL-IS-MISSING.com,Europe/London,en
+PemeCouyCou,Pembrokeshire County Cou,http://www.URL-IS-MISSING.com,Europe/London,en
+GloeCoas,Globe Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+ThosofRhoa,Thomas of Rhondda,http://www.URL-IS-MISSING.com,Europe/London,en
+Clyg&TrerMotrC,Clynnog & Trefor Motor C,http://www.URL-IS-MISSING.com,Europe/London,en
+YeosCannTral,Yeomans Canyon Travel,http://www.URL-IS-MISSING.com,Europe/London,en
+PeynTralLtd,Peyton Travel Ltd,http://www.URL-IS-MISSING.com,Europe/London,en
+DilsCoas,Dilwyn's Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+PetsMinsHire,Peter's Minibus Hire,http://www.URL-IS-MISSING.com,Europe/London,en
+DeneCoul,Denbighshire Council,http://www.URL-IS-MISSING.com,Europe/London,en
+MRRS,Morris Travel,http://www.URL-IS-MISSING.com,Europe/London,en
+JonsLogn,Jones Login,http://www.URL-IS-MISSING.com,Europe/London,en
+Goor,Goodsir,http://www.URL-IS-MISSING.com,Europe/London,en
+EdwsBros,Edwards Bros,http://www.URL-IS-MISSING.com,Europe/London,en
+WremTaxs,Wrexham Taxis,http://www.URL-IS-MISSING.com,Europe/London,en
+GOOD,Goodsir,http://www.URL-IS-MISSING.com,Europe/London,en
+Towx,Townlynx,http://www.URL-IS-MISSING.com,Europe/London,en
+SPCars,SP Cars,http://www.URL-IS-MISSING.com,Europe/London,en
+SarhBell,Sarah Bell,http://www.URL-IS-MISSING.com,Europe/London,en
+SeltCoas,Select Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+ANSL,Phil Anslow,http://www.URL-IS-MISSING.com,Europe/London,en
+Vals,Valentines,http://www.URL-IS-MISSING.com,Europe/London,en
+AlpeTral,Alpine Travel,http://www.URL-IS-MISSING.com,Europe/London,en
+FirtCall,First Call,http://www.URL-IS-MISSING.com,Europe/London,en
+DWYN,Dilwyn's Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+Hutn,Hutchinson,http://www.URL-IS-MISSING.com,Europe/London,en
+BrisCoas,Briggs Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+D&GCoah&Bus,D & G Coach & Bus,http://www.URL-IS-MISSING.com,Europe/London,en
+OswyComyTras,Oswestry Community Trans,http://www.URL-IS-MISSING.com,Europe/London,en
+SwaaCoul,Swansea Council,http://www.URL-IS-MISSING.com,Europe/London,en
+ORJons,O R Jones,http://www.URL-IS-MISSING.com,Europe/London,en
+LLAN,Lewis Y Llan,http://www.URL-IS-MISSING.com,Europe/London,en
+GoorCoas,Goodsir Coaches,http://www.URL-IS-MISSING.com,Europe/London,en
+AirsSers,Airparks Services,http://www.URL-IS-MISSING.com,Europe/London,en
+MNCC,Monmouthshire County Cou,http://www.URL-IS-MISSING.com,Europe/London,en
+DavyTaxs,Davey Taxis,http://www.URL-IS-MISSING.com,Europe/London,en
+VileandVals,Village and Valleys,http://www.URL-IS-MISSING.com,Europe/London,en
+CrilTaxs,Crickhowell Taxis,http://www.URL-IS-MISSING.com,Europe/London,en
